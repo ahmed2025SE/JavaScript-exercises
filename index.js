@@ -1,6 +1,5 @@
 
 const numbers =[5,10,15,20];
-console.log("The sum is:", sumArray(numbers));
 
 function sumArray(arr) {
   let total = 0;
@@ -10,14 +9,40 @@ function sumArray(arr) {
   return total;
 }
 
+console.log(sumArray(numbers));
 
 
 
+// ------------------------------------------------------------------
 const names = ['Ali', 'Sara', 'Omar', 'Lina', 'Mohammed'];
 function longNames(names) {
-  return names.filter(name => name.length > 4);
+  return names.filter(name => name.length >= 4);
 }
 
 console.log(longNames(names)); 
 
 
+
+
+// ------------------------------------------------------------------
+function countWords(str) {
+ 
+  let clean = str.trim();
+  let words = clean.split(/\s+/);
+
+ 
+  let result = {};
+
+
+  for (let w of words) {
+    if (result[w]) {
+      result[w] += 1;
+    } else {
+      result[w] = 1;
+    }
+  }
+
+  return result;
+}
+
+console.log(countWords("Ahmed      Badr   Badr  Ahmed  Ahmed Ahmed  "));
